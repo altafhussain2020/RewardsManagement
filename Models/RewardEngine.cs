@@ -3,7 +3,7 @@ using log4net;
 
 namespace RewardsManagement.Models
 {
-    public class Calc
+    public class RewardEngine
     {  public decimal CalculateRewards(decimal fn, decimal limit)
         {
             try

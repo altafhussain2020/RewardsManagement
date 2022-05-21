@@ -13,7 +13,7 @@ namespace RewardsManagement.Controllers
     [Route("rewards")]
     public class RewardsController : ControllerBase
     {
-        Calc oCalc = new Calc();
+        RewardEngine oCalc = new RewardEngine();
         const decimal Over50 = 50;
         const decimal Over100 = 100;
         private readonly ITransactionsRepository repository;
