@@ -5,6 +5,7 @@ using System.Linq;
 using RewardsManagement.Entities;
 using RewardsManagement.Dtos;
 using RewardsManagement.Repositories;
+using RewardsManagement.Models;
 
 namespace RewardsManagement.Controllers
 {
@@ -24,8 +25,16 @@ namespace RewardsManagement.Controllers
         [HttpGet]
         public IEnumerable<TransactionDto> GetItems()
         {
-            var items = repository.GetItems().Select(item => item.AsDto());
-            return items;
+            try
+            {
+                var items = repository.GetItems().Select(item => item.AsDto());
+                return items;
+            }
+            catch (Exception ex)
+            {
+                throw new ExceptionHandler(ex.Message);
+            }
+
         }
 
         //Get //transactions/{id}
@@ -74,8 +83,10 @@ namespace RewardsManagement.Controllers
                 Name = itemDto.Name,
                 Price = itemDto.Price
             };
-
-            repository.UpdateItem(updatedItem);
+            if(updatedItem is not null)
+            {
+                repository.UpdateItem(updatedItem);
+            }
             return NoContent();
         }
 
@@ -83,6 +94,7 @@ namespace RewardsManagement.Controllers
         [HttpDelete("{id}")]
         public ActionResult DeleteItem(Guid id)
         {
+           
             var existingItem = repository.GetItem(id);
             if (existingItem is null)
             {
