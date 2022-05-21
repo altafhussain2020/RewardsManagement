@@ -9,3 +9,4 @@ This API Consists of the below Modules
 5. Reward calculations module Completed
 6. List Transaction(s) with Calculated Rewards
 7. Exception Handling & Logging
+8. Enabled Health Check for API
