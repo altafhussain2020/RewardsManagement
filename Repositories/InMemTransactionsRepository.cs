@@ -4,7 +4,6 @@ using System.Linq;
 using RewardsManagement.Entities;
 namespace RewardsManagement.Repositories
 {
-
     public class InMemTransactionsRepository : ITransactionsRepository
     {
         private readonly List<Transaction> items = new()
@@ -13,7 +12,6 @@ namespace RewardsManagement.Repositories
             new Transaction{ Id=Guid.NewGuid(), Name="Customer 2", Price=100, CreatedDate=DateTimeOffset.UtcNow },
             new Transaction{ Id=Guid.NewGuid(), Name="Customer 3", Price=200, CreatedDate=DateTimeOffset.UtcNow },
             new Transaction{ Id=Guid.NewGuid(), Name="Customer 4", Price=180, CreatedDate=DateTimeOffset.UtcNow },
-
 
      };
         public IEnumerable<Transaction> GetItems()
