@@ -14,6 +14,11 @@ namespace RewardsManagement.Repositories
         void UpdateItem(Transaction item);
 
         void DeleteItem(Guid id);
+
+        IEnumerable<Transaction> GetTransactionRewards();
+
+        Transaction GetTransactionReward(Guid id);
+
     }
 
 }

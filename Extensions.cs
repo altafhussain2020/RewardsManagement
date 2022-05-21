@@ -15,5 +15,16 @@ namespace RewardsManagement
                 CreatedDate = item.CreatedDate
             };
         }
+
+         public static TransactionRewardDto AsRewardDto(this Transaction item)
+        {
+            return new TransactionRewardDto
+            {
+                Id = item.Id,
+                Name = item.Name,
+                Price = item.Price,               
+                CreatedDate = item.CreatedDate
+            };
+        }
     }
 }

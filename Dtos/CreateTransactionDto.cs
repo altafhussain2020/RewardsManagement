@@ -12,6 +12,8 @@ namespace RewardsManagement.Dtos
         [Range(1, 1000)]
         public decimal Price { get; init; }
 
+         public decimal RewardPoints { get; }
+
     }
 
 
