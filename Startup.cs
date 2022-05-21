@@ -33,6 +33,7 @@ namespace RewardsManagement
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "RewardsManagement", Version = "v1" });
             });
+            services.AddHealthChecks(); // Enabled the Health Checks
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,7 +55,10 @@ namespace RewardsManagement
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHealthChecks("/APIhealth"); 
             });
+             // Enabled the Health Checks
+  
         }
     }
 }
