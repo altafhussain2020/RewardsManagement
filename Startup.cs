@@ -44,10 +44,9 @@ namespace RewardsManagement
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "RewardsManagement v1"));
+                app.UseHttpsRedirection();
             }
-
-            app.UseHttpsRedirection();
-
+            
             app.UseRouting();
 
             app.UseAuthorization();
@@ -55,10 +54,10 @@ namespace RewardsManagement
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-                endpoints.MapHealthChecks("/APIhealth"); 
+                endpoints.MapHealthChecks("/APIhealth");
             });
-             // Enabled the Health Checks
-  
+            // Enabled the Health Checks
+
         }
     }
 }
