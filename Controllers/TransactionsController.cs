@@ -57,16 +57,17 @@ namespace RewardsManagement.Controllers
         {
             Transaction item = new()
             {
-                Id = Guid.NewGuid(),
-                Name = itemDto.Name,
-                Price = itemDto.Price,
-                CreatedDate = DateTimeOffset.UtcNow
+                TransactionId = Guid.NewGuid(),
+                CustomerId=itemDto.CustomerId,
+                Narrative = itemDto.Narrative,
+                TransactionAmount = itemDto.TransactionAmount,
+                TransactionDate = DateTimeOffset.UtcNow
 
             };
 
             repository.CreateItem(item);
 
-            return CreatedAtAction(nameof(GetItem), new { id = item.Id }, item.AsDto());
+            return CreatedAtAction(nameof(GetItem), new { id = item.TransactionId }, item.AsDto());
         }
         //PUT /transaction/{id}
         [HttpPut("{id}")]
@@ -80,8 +81,9 @@ namespace RewardsManagement.Controllers
 
             Transaction updatedItem = existingItem with
             {
-                Name = itemDto.Name,
-                Price = itemDto.Price
+                Narrative = itemDto.Narrative,
+                 CustomerId = itemDto.CustomerId,
+                TransactionAmount = itemDto.TransactionAmount
             };
             if(updatedItem is not null)
             {

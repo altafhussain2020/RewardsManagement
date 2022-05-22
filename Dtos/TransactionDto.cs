@@ -3,10 +3,11 @@ namespace RewardsManagement.Entities
 {
     public record TransactionDto
     {
-        public Guid Id { get; init; }
-        public string Name { get; init; }
-        public decimal Price { get; set; }        
-        public DateTimeOffset CreatedDate { get; init; }
+        public Guid TransactionId { get; init; }
+         public int CustomerId { get; set; }
+        public string Narrative { get; init; }
+        public decimal TransactionAmount { get; set; }        
+        public DateTimeOffset TransactionDate { get; init; }
     }
 
 }

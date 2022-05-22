@@ -27,13 +27,13 @@ namespace RewardsManagement.Controllers
         [HttpGet]
         public IEnumerable<TransactionRewardDto> GetTransactionRewards()
         {
-            var items = repository.GetTransactionRewards().Select(item => item.AsRewardDto());
+            var items = repository.GetTransactionRewards().Select(item => item.AsRewardDto(0));
             List<TransactionRewardDto> FinalList = new List<TransactionRewardDto>();
             try
             {
                 foreach (var item in items)
                 {
-                    item.RewardPoints = oCalc.TotalRewards(oCalc.CalculateRewards(item.Price, Over50), oCalc.CalculateRewards(item.Price, Over100));
+                    item.RewardPoints = oCalc.TotalRewards(oCalc.CalculateRewards(item.TransactionAmount, Over50), oCalc.CalculateRewards(item.TransactionAmount, Over100));
                     FinalList.Add(item);
                 }
             }
@@ -53,12 +53,12 @@ namespace RewardsManagement.Controllers
             {
                 return NotFound();
             }
-            var itemReward = item.AsRewardDto();
-            itemReward.RewardPoints = oCalc.TotalRewards(oCalc.CalculateRewards(itemReward.Price, 50), oCalc.CalculateRewards(itemReward.Price, 100));
+            var itemReward = item.AsRewardDto(0);
+            itemReward.RewardPoints = oCalc.TotalRewards(oCalc.CalculateRewards(itemReward.TransactionAmount, Over50), oCalc.CalculateRewards(itemReward.TransactionAmount, Over100));
 
-            return item.AsRewardDto();
+            return item.AsRewardDto(itemReward.RewardPoints);
 
         }
-
+      
     }
 }

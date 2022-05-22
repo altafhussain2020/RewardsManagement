@@ -19,6 +19,8 @@ namespace RewardsManagement.Repositories
 
         Transaction GetTransactionReward(Guid id);
 
+         IEnumerable<Customer> GetCustomers();
+        Customer GetCustomer(int id);
     }
 
 }

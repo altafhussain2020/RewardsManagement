@@ -35,7 +35,7 @@ namespace RewardsManagement.Models
                 Logger.LogMessage(ex.StackTrace);
                  return 0;
             } 
-             return 0;
+            
         }
     }
 }

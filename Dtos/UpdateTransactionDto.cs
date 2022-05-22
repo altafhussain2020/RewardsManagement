@@ -6,11 +6,13 @@ namespace RewardsManagement.Dtos
     public record UpdateTransactionDto
     {
         [Required]
-        public string Name { get; init; }
+        public int CustomerId { get; set; }
 
         [Required]
+        public string Narrative { get; init; }
+        [Required]
         [Range(1, 1000)]
-        public decimal Price { get; init; }
+        public decimal TransactionAmount { get; init; }
 
     }
 

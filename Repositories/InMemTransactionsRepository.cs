@@ -6,12 +6,22 @@ namespace RewardsManagement.Repositories
 {
     public class InMemTransactionsRepository : ITransactionsRepository
     {
+        private readonly List<Customer> customers = new()
+     {
+           new Customer{CustomerId=1001,CustomerName="Customer 1"},
+           new Customer{CustomerId=1002,CustomerName="Customer 2"},
+           new Customer{CustomerId=1003,CustomerName="Customer 3"},
+           new Customer{CustomerId=1004,CustomerName="Customer 4"},
+           new Customer{CustomerId=1005,CustomerName="Customer 5"},
+           new Customer{CustomerId=1006,CustomerName="Customer 6"}
+     };
+
         private readonly List<Transaction> items = new()
      {
-            new Transaction{ Id=Guid.NewGuid(), Name="Customer 1", Price=120,  CreatedDate=DateTimeOffset.UtcNow },
-            new Transaction{ Id=Guid.NewGuid(), Name="Customer 2", Price=100, CreatedDate=DateTimeOffset.UtcNow },
-            new Transaction{ Id=Guid.NewGuid(), Name="Customer 3", Price=200, CreatedDate=DateTimeOffset.UtcNow },
-            new Transaction{ Id=Guid.NewGuid(), Name="Customer 4", Price=180, CreatedDate=DateTimeOffset.UtcNow },
+            new Transaction{ TransactionId=Guid.NewGuid(),CustomerId=1001, Narrative="Shopping at Amazon", TransactionAmount=120,  TransactionDate=DateTimeOffset.UtcNow },
+            new Transaction{ TransactionId=Guid.NewGuid(),CustomerId=1002, Narrative="Shopping at Casco", TransactionAmount=100, TransactionDate=DateTimeOffset.UtcNow },
+            new Transaction{ TransactionId=Guid.NewGuid(),CustomerId=1003, Narrative="Shopping at Ikea", TransactionAmount=200, TransactionDate=DateTimeOffset.UtcNow },
+            new Transaction{ TransactionId=Guid.NewGuid(),CustomerId=1004, Narrative="Shopping at Amazon", TransactionAmount=180, TransactionDate=DateTimeOffset.UtcNow },
 
      };
         public IEnumerable<Transaction> GetItems()
@@ -20,7 +30,7 @@ namespace RewardsManagement.Repositories
         }
         public Transaction GetItem(Guid id)
         {
-            return items.Where(item => item.Id == id).SingleOrDefault();
+            return items.Where(item => item.TransactionId == id).SingleOrDefault();
 
         }
 
@@ -31,13 +41,13 @@ namespace RewardsManagement.Repositories
 
         public void UpdateItem(Transaction item)
         {
-            var index= items.FindIndex(existingItem=>existingItem.Id==item.Id);
+            var index= items.FindIndex(existingItem=>existingItem.TransactionId==item.TransactionId);
             items[index]=item;
         }
 
         public void DeleteItem(Guid id)
         {
-             var index= items.FindIndex(existingItem=>existingItem.Id==id);
+             var index= items.FindIndex(existingItem=>existingItem.TransactionId==id);
             items.RemoveAt(index);
         }
 
@@ -48,7 +58,17 @@ namespace RewardsManagement.Repositories
 
         public Transaction GetTransactionReward(Guid id)
         {
-            return items.Where(item => item.Id == id).SingleOrDefault();
+            return items.Where(item => item.TransactionId == id).SingleOrDefault();
+        }
+
+        public IEnumerable<Customer> GetCustomers()
+        {
+            return customers;
+        }
+
+        public Customer GetCustomer(int id)
+        {
+            return customers.Where(item => item.CustomerId == id).SingleOrDefault();
         }
     }
 }

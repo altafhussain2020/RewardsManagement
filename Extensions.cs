@@ -9,21 +9,47 @@ namespace RewardsManagement
         {
             return new TransactionDto
             {
-                Id = item.Id,
-                Name = item.Name,
-                Price = item.Price,
-                CreatedDate = item.CreatedDate
+                TransactionId = item.TransactionId,
+                CustomerId = item.CustomerId,
+                Narrative = item.Narrative,
+                TransactionAmount = item.TransactionAmount,
+                TransactionDate = item.TransactionDate
             };
         }
 
-         public static TransactionRewardDto AsRewardDto(this Transaction item)
+         public static TransactionRewardDto AsRewardDto(this Transaction item,decimal rewardPoints)
         {
             return new TransactionRewardDto
             {
-                Id = item.Id,
-                Name = item.Name,
-                Price = item.Price,               
-                CreatedDate = item.CreatedDate
+                TransactionId = item.TransactionId,
+                CustomerId = item.CustomerId,
+                Narrative = item.Narrative,
+                TransactionAmount = item.TransactionAmount,               
+                TransactionDate = item.TransactionDate,
+                RewardPoints=rewardPoints
+                
+            };
+        }
+
+
+        public static CustomerDto AsCustomerDto(this Customer item)
+        {
+            return new CustomerDto
+            {
+                CustomerId = item.CustomerId,
+                CustomerName = item.CustomerName,
+               
+            };
+        }
+
+         public static CustomerRewardsDto AsCustomerRewardDto(this CustomerRewards item)
+        {
+            return new CustomerRewardsDto
+            {
+                CustomerId = item.CustomerId,
+                CustomerName = item.CustomerName,
+               TotalRewardPoints=item.TotalRewardPoints,
+               TotalTransactionAmount=item.TotalTransactionAmount
             };
         }
     }
