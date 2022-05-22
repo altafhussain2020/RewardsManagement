@@ -17,4 +17,4 @@ Docker Image : altafdocker2022/rewardsapi:v1
 
 Step1: Run the Docker Engine
 
-Step2 : docker run -it --rm -p 8080:80 --network=rmsapi altafdocker2022/rewardsapi:v1
+Step2 : docker run -it --rm -p 8080:80 --network=rmsapi altafdocker2022/rewardsapi:v1.1
