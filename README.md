@@ -37,7 +37,7 @@ This API Consists of the below Modules
 - Docker Containerization
 
 **How to Deploy Docker Container**
-> Docker Image : altafdocker2022/rewardsapi:v1
+> Docker Image : altafdocker2022/rewardsapi:v1.1
 ```
 > Step1: Run the Docker Engine
 
@@ -64,7 +64,9 @@ This API Consists of the below Modules
 
 - Get Rewards Summary :https://localhost:8080/summary/1
 ```
- Pass Input as No.Of Months. If you Pass 1 then API retruns Currenct Month Data
+ Pass Input as No.Of Months.
+      If you Pass 1 then API returns Current Month Data . 
+      If you Pass 3 then API returns Last 3 Months Data . 
 ```
 **API Health Check**
 - Health Monitoring Link : http://localhost:8080/APIHealth
