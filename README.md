@@ -1,20 +1,46 @@
 # Rewards Management API
+```
 Author: Altaf Hussain Shaik
 Designation: Full Stack Develper + Devops Engineer.
+```
+**Modules** 
+
 This API Consists of the below Modules
-1. Create Transaction
-2. Update Transaction
-3. Delete Transaction
-4. List Transaction(s)
-5. Reward calculations module Completed
-6. List Transaction(s) with Calculated Rewards
-7. Exception Handling & Logging
-8. Enabled Health Check for API
-9. Containerize the API with Docker File
+- Create Transaction
+- Update Transaction
+- Delete Transaction
+- List Transaction(s)
+- List Customers
+- Reward calculations module Completed
+- List Transaction(s) with Calculated Rewards
+- List Customer Rewards Summary 
+- Exception Handling & Logging
+- Enabled Health Check for API
+- Containerize the API with Docker File
 
-How to Deploy Docker Container :
-Docker Image : altafdocker2022/rewardsapi:v1
+**Data Storage**
+> Submitted Data will be stored in InMemory
 
-Step1: Run the Docker Engine
+# Dataset Sample
 
-Step2 : docker run -it --rm -p 8080:80 --network=rmsapi altafdocker2022/rewardsapi:v1.1
+![This is an image](https://github.com/altafhussain2020/RewardsManagement/blob/master/assets/Images/RM_Customer.jpg)
+
+![This is an image](https://github.com/altafhussain2020/RewardsManagement/blob/master/assets/Images/RM_Transactions.jpg)
+
+![This is an image](https://github.com/altafhussain2020/RewardsManagement/blob/master/assets/Images/RM_TransactionRewards.jpg)
+
+![This is an image](https://github.com/altafhussain2020/RewardsManagement/blob/master/assets/Images/RM_Transactions.jpg)
+
+**Technology Specifications**
+- ASP.Net Web API .NET Core 5.0
+- Docker Containerization
+
+**How to Test this API**
+
+**How to Deploy Docker Container**
+> Docker Image : altafdocker2022/rewardsapi:v1
+```
+> Step1: Run the Docker Engine
+
+> Step2 : docker run -it --rm -p 8080:80 --network=rmsapi altafdocker2022/rewardsapi:v1.1
+```
