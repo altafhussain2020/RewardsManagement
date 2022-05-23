@@ -57,7 +57,7 @@ namespace RewardsManagement
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-                endpoints.MapHealthChecks("/APIhealth");
+                endpoints.MapHealthChecks("/health");
             });
             // Enabled the Health Checks
 
