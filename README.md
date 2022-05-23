@@ -47,6 +47,10 @@ This API Consists of the below Modules
 - ASP.Net Web API .NET Core 5.0
 - Docker Containerization
 
+**Project Artifacts**
+- RewardsManagement.Api
+- RewardsManagement.UnitTests
+
 **How to Deploy Docker Container**
 > Docker Image : altafdocker2022/rewardsapi:v1.1
 ```
