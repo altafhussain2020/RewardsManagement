@@ -23,12 +23,12 @@ This API Consists of the below Modules
 - Delete Transaction
 - List Transaction(s)
 - List Customers
-- Reward calculations module Completed
+- Reward calculations engine 
 - List Transaction(s) with Calculated Rewards
 - List Customer Rewards Summary 
 - Exception Handling & Logging
 - Enabled Health Check for API
-- Containerize the API with Docker File
+- Containerized the API with Docker File
 
 **Data Storage**
 > InMemory Data Maintenance Mode
@@ -57,27 +57,29 @@ This API Consists of the below Modules
 
 **How to Test this API**
 
-- Get Customer List : https://localhost:8080/customers
+> Open Request through Postman
 
-- Get Specific Customer : https://localhost:8080/customers/1001
+- GET Customer List : https://localhost:8080/customers
+
+- GET Specific Customer : https://localhost:8080/customers/1001
 ```
  Pass Input as Customer Id. 
 ```
 
-- Get Transactions List : https://localhost:8080/items
+- GET Transactions List : https://localhost:8080/items
 
-- Get Transaction Rewards list : https://localhost:8080/rewards
+- GET Transaction Rewards list : https://localhost:8080/rewards
 
-- GetSpecific Transaction Rewards: https://localhost:8080/rewards/3fa85f64-5717-4562-b3fc-2c963f66afa6
+- GET Specific Transaction Rewards: https://localhost:8080/rewards/3fa85f64-5717-4562-b3fc-2c963f66afa6
 ```
  Pass Input as Transaction Id. 
 ```
 
-- Get Rewards Summary :https://localhost:8080/summary/1
+- GET Rewards Summary :https://localhost:8080/summary/1
 ```
  Pass Input as No.Of Months.
       If you Pass 1 then API returns Current Month Data . 
       If you Pass 3 then API returns Last 3 Months Data . 
 ```
 **API Health Check**
-- Health Monitoring Link : http://localhost:8080/APIHealth
+- Health Monitoring Link : http://localhost:8080/health
