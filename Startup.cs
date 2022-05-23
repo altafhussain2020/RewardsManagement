@@ -28,7 +28,10 @@ namespace RewardsManagement
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<ITransactionsRepository, InMemTransactionsRepository>();
-            services.AddControllers();
+            services.AddControllers(options=>
+            {
+                options.SuppressAsyncSuffixInActionNames=false;
+            });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "RewardsManagement", Version = "v1" });

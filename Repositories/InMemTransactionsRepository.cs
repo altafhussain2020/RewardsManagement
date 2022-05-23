@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using RewardsManagement.Entities;
 namespace RewardsManagement.Repositories
 {
@@ -24,51 +25,56 @@ namespace RewardsManagement.Repositories
             new Transaction{ TransactionId=Guid.NewGuid(),CustomerId=1004, Narrative="Shopping at Amazon", TransactionAmount=180, TransactionDate=DateTimeOffset.UtcNow },
 
      };
-        public IEnumerable<Transaction> GetItems()
+        public async Task<IEnumerable<Transaction>> GetItemsAsync()
         {
-            return items;
+            return await Task.FromResult(items);
         }
-        public Transaction GetItem(Guid id)
+        public async Task<Transaction> GetItemAsync(Guid id)
         {
-            return items.Where(item => item.TransactionId == id).SingleOrDefault();
-
+            var item= items.Where(item => item.TransactionId == id).SingleOrDefault();
+            return await Task.FromResult(item);
         }
 
-        public void CreateItem(Transaction item)
+        public async Task CreateItemAsync(Transaction item)
         {
             items.Add(item);
+            await Task.CompletedTask;
         }
 
-        public void UpdateItem(Transaction item)
+        public async Task UpdateItemAsync(Transaction item)
         {
             var index= items.FindIndex(existingItem=>existingItem.TransactionId==item.TransactionId);
             items[index]=item;
+             await Task.CompletedTask;
         }
 
-        public void DeleteItem(Guid id)
+        public async Task DeleteItemAsync(Guid id)
         {
              var index= items.FindIndex(existingItem=>existingItem.TransactionId==id);
             items.RemoveAt(index);
+             await Task.CompletedTask;
         }
 
-        public IEnumerable<Transaction> GetTransactionRewards()
+        public async Task<IEnumerable<Transaction>> GetTransactionRewardsAsync()
         {
-             return items;
+             return await Task.FromResult(items);
         }
 
-        public Transaction GetTransactionReward(Guid id)
+        public async Task<Transaction> GetTransactionRewardAsync(Guid id)
         {
-            return items.Where(item => item.TransactionId == id).SingleOrDefault();
+            var item= items.Where(item => item.TransactionId == id).SingleOrDefault();
+            return await Task.FromResult(item);
         }
 
-        public IEnumerable<Customer> GetCustomers()
+        public async Task<IEnumerable<Customer>> GetCustomersAsync()
         {
-            return customers;
+            return await Task.FromResult(customers);
         }
 
-        public Customer GetCustomer(int id)
+        public async Task<Customer> GetCustomerAsync(int id)
         {
-            return customers.Where(item => item.CustomerId == id).SingleOrDefault();
+            var item= customers.Where(item => item.CustomerId == id).SingleOrDefault();
+             return await Task.FromResult(item);
         }
     }
 }

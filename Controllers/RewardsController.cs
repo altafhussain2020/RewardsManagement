@@ -5,6 +5,7 @@ using System.Linq;
 using RewardsManagement.Dtos;
 using RewardsManagement.Repositories;
 using RewardsManagement.Models;
+using System.Threading.Tasks;
 
 namespace RewardsManagement.Controllers
 {
@@ -25,9 +26,9 @@ namespace RewardsManagement.Controllers
         }
         //Get //transactionRewards
         [HttpGet]
-        public IEnumerable<TransactionRewardDto> GetTransactionRewards()
+        public async Task<IEnumerable<TransactionRewardDto>> GetTransactionRewardsAsync()
         {
-            var items = repository.GetTransactionRewards().Select(item => item.AsRewardDto(0));
+            var items = (await repository.GetTransactionRewardsAsync()).Select(item => item.AsRewardDto(0));
             List<TransactionRewardDto> FinalList = new List<TransactionRewardDto>();
             try
             {
@@ -41,14 +42,14 @@ namespace RewardsManagement.Controllers
             {
                 Logger.LogMessage(ex.Message);
             }
-            return FinalList;
+            return await Task.FromResult(FinalList);
         }
 
         //Get //transactionRewards/{id}
         [HttpGet("{id}")]
-        public ActionResult<TransactionRewardDto> GetItem(Guid id)
+        public async Task<ActionResult<TransactionRewardDto>> GetItemAsync(Guid id)
         {
-            var item = repository.GetItem(id);
+            var item = await repository.GetItemAsync(id);
             if (item == null)
             {
                 return NotFound();
@@ -56,7 +57,7 @@ namespace RewardsManagement.Controllers
             var itemReward = item.AsRewardDto(0);
             itemReward.RewardPoints = oCalc.TotalRewards(oCalc.CalculateRewards(itemReward.TransactionAmount, Over50), oCalc.CalculateRewards(itemReward.TransactionAmount, Over100));
 
-            return item.AsRewardDto(itemReward.RewardPoints);
+            return await Task.FromResult(item.AsRewardDto(itemReward.RewardPoints));
 
         }
       

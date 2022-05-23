@@ -6,6 +6,7 @@ using RewardsManagement.Entities;
 using RewardsManagement.Dtos;
 using RewardsManagement.Repositories;
 using RewardsManagement.Models;
+using System.Threading.Tasks;
 
 namespace RewardsManagement.Controllers
 {
@@ -23,12 +24,14 @@ namespace RewardsManagement.Controllers
         }
         //Get //customers
         [HttpGet]
-        public IEnumerable<CustomerDto> GetCustomers()
+        public async Task<IEnumerable<CustomerDto>> GetCustomersAsync()
         {
             try
             {
-                var items = repository.GetCustomers().Select(item => item.AsCustomerDto());
+                var items = (await repository.GetCustomersAsync()).Select(item => item.AsCustomerDto());
                 return items;
+
+               
             }
             catch (Exception ex)
             {
@@ -39,9 +42,9 @@ namespace RewardsManagement.Controllers
 
         //Get //customers/{id}
         [HttpGet("{id}")]
-        public ActionResult<CustomerDto> GetCustomer(int id)
+        public async Task<ActionResult<CustomerDto>> GetCustomerAsync(int id)
         {
-            var item = repository.GetCustomer(id);
+            var item = await repository.GetCustomerAsync(id);
             if (item == null)
             {
 

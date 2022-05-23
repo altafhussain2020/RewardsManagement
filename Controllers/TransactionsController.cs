@@ -6,6 +6,7 @@ using RewardsManagement.Entities;
 using RewardsManagement.Dtos;
 using RewardsManagement.Repositories;
 using RewardsManagement.Models;
+using System.Threading.Tasks;
 
 namespace RewardsManagement.Controllers
 {
@@ -23,11 +24,11 @@ namespace RewardsManagement.Controllers
         }
         //Get //transactions
         [HttpGet]
-        public IEnumerable<TransactionDto> GetItems()
+        public async Task<IEnumerable<TransactionDto>> GetItemsAsync()
         {
             try
             {
-                var items = repository.GetItems().Select(item => item.AsDto());
+                var items = (await repository.GetItemsAsync()).Select(item => item.AsDto());
                 return items;
             }
             catch (Exception ex)
@@ -39,9 +40,9 @@ namespace RewardsManagement.Controllers
 
         //Get //transactions/{id}
         [HttpGet("{id}")]
-        public ActionResult<TransactionDto> GetItem(Guid id)
+        public async Task<ActionResult<TransactionDto>> GetItemAsync(Guid id)
         {
-            var item = repository.GetItem(id);
+            var item = await repository.GetItemAsync(id);
             if (item == null)
             {
 
@@ -53,7 +54,7 @@ namespace RewardsManagement.Controllers
 
         //POST /transaction
         [HttpPost]
-        public ActionResult<TransactionDto> CreateItem(CreateTransactionDto itemDto)
+        public async Task<ActionResult<TransactionDto>> CreateItemAsync(CreateTransactionDto itemDto)
         {
             Transaction item = new()
             {
@@ -65,15 +66,15 @@ namespace RewardsManagement.Controllers
 
             };
 
-            repository.CreateItem(item);
+            await repository.CreateItemAsync(item);
 
-            return CreatedAtAction(nameof(GetItem), new { id = item.TransactionId }, item.AsDto());
+            return CreatedAtAction(nameof(GetItemAsync), new { id = item.TransactionId }, item.AsDto());
         }
         //PUT /transaction/{id}
         [HttpPut("{id}")]
-        public ActionResult UpdateItem(Guid id, UpdateTransactionDto itemDto)
+        public async Task<ActionResult> UpdateItemAsync(Guid id, UpdateTransactionDto itemDto)
         {
-            var existingItem = repository.GetItem(id);
+            var existingItem = await repository.GetItemAsync(id);
             if (existingItem is null)
             {
                 return NotFound();
@@ -87,22 +88,22 @@ namespace RewardsManagement.Controllers
             };
             if(updatedItem is not null)
             {
-                repository.UpdateItem(updatedItem);
+                await repository.UpdateItemAsync(updatedItem);
             }
             return NoContent();
         }
 
         //DELETE / transaction/{id}
         [HttpDelete("{id}")]
-        public ActionResult DeleteItem(Guid id)
+        public async Task<ActionResult> DeleteItemAsync(Guid id)
         {
            
-            var existingItem = repository.GetItem(id);
+            var existingItem = await repository.GetItemAsync(id);
             if (existingItem is null)
             {
                 return NotFound();
             }
-            repository.DeleteItem(id);
+            await repository.DeleteItemAsync(id);
 
             return NoContent();
         }

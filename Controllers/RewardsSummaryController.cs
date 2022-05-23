@@ -5,6 +5,7 @@ using System.Linq;
 using RewardsManagement.Dtos;
 using RewardsManagement.Repositories;
 using RewardsManagement.Models;
+using System.Threading.Tasks;
 
 namespace RewardsManagement.Controllers
 {
@@ -26,10 +27,10 @@ namespace RewardsManagement.Controllers
         
         //Get //customersummary
           [HttpGet("{months}")]
-        public object GetCustomerSummary(int months)
+        public async Task<IEnumerable<object>> GetCustomerSummaryAsync(int months)
         {
-            var items = repository.GetTransactionRewards().Select(item => item.AsRewardDto(0));
-            var customers = repository.GetCustomers();
+            var items = (await repository.GetTransactionRewardsAsync()).Select(item => item.AsRewardDto(0));
+            var customers = await repository.GetCustomersAsync();
             List<TransactionRewardDto> transactionRewardsList = new List<TransactionRewardDto>();
             List<CustomerRewardsDto> customerRewardsList = new List<CustomerRewardsDto>();
             try
@@ -49,7 +50,7 @@ namespace RewardsManagement.Controllers
                     TotalRewardPoints = transactionRewardsList.Where(t => t.CustomerId.Equals(c.CustomerId) && t.TransactionDate >= date ).Select(t => t.RewardPoints).Sum()
                 }).ToList();                             
                 
-                return customerRewardTransactions;
+                return await Task.FromResult(customerRewardTransactions);
             }
             catch (Exception ex)
             {

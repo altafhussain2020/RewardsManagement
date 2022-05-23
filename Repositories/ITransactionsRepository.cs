@@ -1,26 +1,27 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using RewardsManagement.Entities;
 
 namespace RewardsManagement.Repositories
 {
       public interface ITransactionsRepository
     {
-        Transaction GetItem(Guid id);
-        IEnumerable<Transaction> GetItems();
+        Task<Transaction> GetItemAsync(Guid id);
+        Task<IEnumerable<Transaction>> GetItemsAsync();
 
-        void CreateItem(Transaction item);
+        Task CreateItemAsync(Transaction item);
 
-        void UpdateItem(Transaction item);
+        Task UpdateItemAsync(Transaction item);
 
-        void DeleteItem(Guid id);
+        Task DeleteItemAsync(Guid id);
 
-        IEnumerable<Transaction> GetTransactionRewards();
+        Task<IEnumerable<Transaction>> GetTransactionRewardsAsync();
 
-        Transaction GetTransactionReward(Guid id);
+        Task<Transaction> GetTransactionRewardAsync(Guid id);
 
-         IEnumerable<Customer> GetCustomers();
-        Customer GetCustomer(int id);
+        Task<IEnumerable<Customer>> GetCustomersAsync();
+        Task<Customer> GetCustomerAsync(int id);
     }
 
 }
