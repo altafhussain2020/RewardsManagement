@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/RewardsManagement.csproj",
+                "${workspaceFolder}/RewardsManagement.Api/RewardsManagement.Api.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/RewardsManagement.csproj",
+                "${workspaceFolder}/RewardsManagement.Api/RewardsManagement.Api.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -33,7 +33,7 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/RewardsManagement.csproj"
+                "${workspaceFolder}/RewardsManagement.Api/RewardsManagement.Api.csproj"
             ],
             "problemMatcher": "$msCompile"
         },
@@ -46,12 +46,12 @@
             "dockerBuild": {
                 "tag": "rewardsmanagement:dev",
                 "target": "base",
-                "dockerfile": "${workspaceFolder}/Dockerfile",
-                "context": "${workspaceFolder}",
+                "dockerfile": "${workspaceFolder}/RewardsManagement.Api/Dockerfile",
+                "context": "${workspaceFolder}/RewardsManagement.Api",
                 "pull": true
             },
             "netCore": {
-                "appProject": "${workspaceFolder}/RewardsManagement.csproj"
+                "appProject": "${workspaceFolder}/RewardsManagement.Api/RewardsManagement.Api.csproj"
             }
         },
         {
@@ -62,12 +62,12 @@
             ],
             "dockerBuild": {
                 "tag": "rewardsmanagement:latest",
-                "dockerfile": "${workspaceFolder}/Dockerfile",
-                "context": "${workspaceFolder}",
+                "dockerfile": "${workspaceFolder}/RewardsManagement.Api/Dockerfile",
+                "context": "${workspaceFolder}/RewardsManagement.Api",
                 "pull": true
             },
             "netCore": {
-                "appProject": "${workspaceFolder}/RewardsManagement.csproj"
+                "appProject": "${workspaceFolder}/RewardsManagement.Api/RewardsManagement.Api.csproj"
             }
         },
         {
@@ -78,7 +78,7 @@
             ],
             "dockerRun": {},
             "netCore": {
-                "appProject": "${workspaceFolder}/RewardsManagement.csproj",
+                "appProject": "${workspaceFolder}/RewardsManagement.Api/RewardsManagement.Api.csproj",
                 "enableDebugging": true,
                 "configureSsl": false
             }
@@ -91,7 +91,7 @@
             ],
             "dockerRun": {},
             "netCore": {
-                "appProject": "${workspaceFolder}/RewardsManagement.csproj"
+                "appProject": "${workspaceFolder}/RewardsManagement.Api/RewardsManagement.Api.csproj"
             }
         }
     ]

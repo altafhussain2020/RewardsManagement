@@ -6,15 +6,15 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/bin/Debug/net5.0/RewardsManagement.dll",
+            "program": "${workspaceFolder}/RewardsManagement.Api/bin/Debug/net5.0/RewardsManagement.Api.dll",
             "args": [],
-            "cwd": "${workspaceFolder}",
+            "cwd": "${workspaceFolder}/RewardsManagement.Api",
             "stopAtEntry": false,
             "env": {
                 "ASPNETCORE_ENVIRONMENT": "Development"
             },
             "sourceFileMap": {
-                "/Views": "${workspaceFolder}/Views"
+                "/Views": "${workspaceFolder}/RewardsManagement.Api/Views"
             }
         },
         {
@@ -28,7 +28,7 @@
             "request": "launch",
             "preLaunchTask": "docker-run: debug",
             "netCore": {
-                "appProject": "${workspaceFolder}/RewardsManagement.csproj"
+                "appProject": "${workspaceFolder}/RewardsManagement.Api/RewardsManagement.Api.csproj"
             }
         }
     ]
