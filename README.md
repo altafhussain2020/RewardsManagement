@@ -1,9 +1,10 @@
 # Rewards Management API
 ```
 Author: Altaf Hussain Shaik
-Designation: Full Stack Develper + Devops Engineer.
+Designation: Full Stack Developer and DevOps Engineer.
 Created Date: 21-May-2022
 ```
+---
 **Introduction**
 
 A retailer offers a rewards program to its customers awarding points based on each recorded 
@@ -58,6 +59,14 @@ This API Consists of the below Modules
 
 > Step2 : docker run -it --rm -p 8080:80 --network=rmsapi altafdocker2022/rewardsapi:v1.1
 ```
+**API Swagger Explorer**
+![This is an image](https://github.com/altafhussain2020/RewardsManagement/blob/master/assets/Images/Swagger.jpg)
+
+**Unit Test Cases**
+
+![This is an image](https://github.com/altafhussain2020/RewardsManagement/blob/master/assets/Images/Badge.jpg)
+
+![This is an image](https://github.com/altafhussain2020/RewardsManagement/blob/master/assets/Images/TestExplorer.jpg)
 
 **How to Test this API**
 
