@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v5.0": {
       "RewardsManagement.UnitTests/1.0.0": {
         "dependencies": {
+          "FluentAssertions": "6.7.0",
           "Microsoft.Extensions.Logging.Abstractions": "6.0.1",
           "Microsoft.NET.Test.Sdk": "16.9.4",
           "RewardsManagement.Api": "1.0.0",
@@ -32,6 +33,17 @@
         }
       },
       "coverlet.collector/3.0.2": {},
+      "FluentAssertions/6.7.0": {
+        "dependencies": {
+          "System.Configuration.ConfigurationManager": "4.5.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/FluentAssertions.dll": {
+            "assemblyVersion": "6.7.0.0",
+            "fileVersion": "6.7.0.0"
+          }
+        }
+      },
       "log4net/2.0.12": {
         "dependencies": {
           "System.Configuration.ConfigurationManager": "4.5.0"
@@ -1334,6 +1346,13 @@
       "sha512": "sha512-iBvPAIDaI7j/iMx/DzCGCJ3rdiOmel9VINEfaTiBv/NKIGHOP4X3hqc6Q1wgMtArEshlhXexQknP17SK4vXb1w==",
       "path": "coverlet.collector/3.0.2",
       "hashPath": "coverlet.collector.3.0.2.nupkg.sha512"
+    },
+    "FluentAssertions/6.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-PWbow/R3MnYDP8UW7zh/w80rGb+1NufGoNJeuzouTo2bqpvwNTFxbDwF6XWfFZ5IuquL2225Um+qSyZ8jVsT+w==",
+      "path": "fluentassertions/6.7.0",
+      "hashPath": "fluentassertions.6.7.0.nupkg.sha512"
     },
     "log4net/2.0.12": {
       "type": "package",

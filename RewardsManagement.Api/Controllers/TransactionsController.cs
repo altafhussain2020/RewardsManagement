@@ -7,6 +7,7 @@ using RewardsManagement.Api.Dtos;
 using RewardsManagement.Api.Repositories;
 using RewardsManagement.Api.Models;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 
 namespace RewardsManagement.Api.Controllers
 {
@@ -17,10 +18,12 @@ namespace RewardsManagement.Api.Controllers
     {
         private readonly ITransactionsRepository repository;
 
-        public TransactionsController(ITransactionsRepository repository)
+        private readonly ILogger<TransactionsController> logger;
+
+        public TransactionsController(ITransactionsRepository repository,ILogger<TransactionsController> logger)
         {
             this.repository = repository;
-
+            this.logger = logger;
         }
         //Get //transactions
         [HttpGet]

@@ -6,7 +6,7 @@ namespace RewardsManagement.Api.Dtos
     public record CreateTransactionDto
     { 
         [Required]
-        public int CustomerId { get; set; }
+        public int CustomerId { get; init; }
         [Required]
         public string Narrative { get; init; }
 
@@ -14,7 +14,7 @@ namespace RewardsManagement.Api.Dtos
         [Range(1, 1000)]
         public decimal TransactionAmount { get; init; }
 
-         public decimal RewardPoints { get; }
+         public decimal RewardPoints { get; init;}
 
     }
 
