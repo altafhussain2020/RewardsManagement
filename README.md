@@ -10,7 +10,7 @@ A retailer offers a rewards program to its customers awarding points based on ea
 purchase as follows:
 ```
 For every dollar spent over $50 on the transaction, the customer receives one point.In addition, for every dollar spent over $100, the customer receives another point.
-Ex: for a $120 purchase, the customer receives(120 - 50) x 1 + (120 - 100) x 1 = 90 pointsGiven a record of every transaction during a three-month period,
+Ex: for a $120 purchase, the customer receives(120 - 50) x 1 + (120 - 100) x 1 = 90 points Given a record of every transaction during a three-month period,
 > Calculate the reward points earned for each customer per month and total.
 > Make up a data set to best demonstrate your solution
 > Check solution into GitHub
@@ -46,6 +46,10 @@ This API Consists of the below Modules
 **Technology Specifications**
 - ASP.Net Web API .NET Core 5.0
 - Docker Containerization
+
+**Project Artifacts**
+- RewardsManagement.Api
+- RewardsManagement.UnitTests
 
 **How to Deploy Docker Container**
 > Docker Image : altafdocker2022/rewardsapi:v1.1
