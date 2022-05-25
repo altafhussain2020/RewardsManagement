@@ -57,7 +57,7 @@ This API Consists of the below Modules
 ```
 > Step1: Run the Docker Engine
 
-> Step2 : docker run -it --rm -p 8080:80 --network=rmsapi altafdocker2022/rewardsapi:v1.1
+> Step2 : docker run -it --rm -p 8080:80 --network=rmsapi altafdocker2022/rewardsapi:v1.3
 ```
 **API Swagger Explorer**
 ![This is an image](https://github.com/altafhussain2020/RewardsManagement/blob/master/assets/Images/Swagger.jpg)
