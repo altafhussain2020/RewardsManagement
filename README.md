@@ -53,7 +53,7 @@ This API Consists of the below Modules
 - RewardsManagement.UnitTests
 
 **How to Deploy Docker Container**
-> Docker Image : altafdocker2022/rewardsapi:v1.1
+> Docker Image : altafdocker2022/rewardsapi:v1.3
 ```
 > Step1: Run the Docker Engine
 
@@ -72,23 +72,23 @@ This API Consists of the below Modules
 
 > Open Request through Postman
 
-- GET Customer List : https://localhost:8080/customers
+- GET Customer List : http://localhost:8080/customers
 
-- GET Specific Customer : https://localhost:8080/customers/1001
+- GET Specific Customer : http://localhost:8080/customers/1001
 ```
  Pass Input as Customer Id. 
 ```
 
-- GET Transactions List : https://localhost:8080/items
+- GET Transactions List : http://localhost:8080/items
 
-- GET Transaction Rewards list : https://localhost:8080/rewards
+- GET Transaction Rewards list : http://localhost:8080/rewards
 
-- GET Specific Transaction Rewards: https://localhost:8080/rewards/3fa85f64-5717-4562-b3fc-2c963f66afa6
+- GET Specific Transaction Rewards: http://localhost:8080/rewards/3fa85f64-5717-4562-b3fc-2c963f66afa6
 ```
  Pass Input as Transaction Id. 
 ```
 
-- GET Rewards Summary :https://localhost:8080/summary/1
+- GET Rewards Summary :http://localhost:8080/summary/1
 ```
  Pass Input as No.Of Months.
       If you Pass 1 then API returns Current Month Data . 
