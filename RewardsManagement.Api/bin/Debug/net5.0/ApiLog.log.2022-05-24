@@ -1,0 +1,41 @@
+2022-05-24 00:15:40,388  INFO Microsoft.Hosting.Lifetime.LogMessage [0] - MESSAGE: Now listening on: https://localhost:5001
+ 2022-05-24 00:15:40,457  INFO Microsoft.Hosting.Lifetime.LogMessage [0] - MESSAGE: Now listening on: http://localhost:5000
+ 2022-05-24 00:15:40,459  INFO Microsoft.Hosting.Lifetime.LogMessage [0] - MESSAGE: Application started. Press Ctrl+C to shut down.
+ 2022-05-24 00:15:40,461  INFO Microsoft.Hosting.Lifetime.LogMessage [0] - MESSAGE: Hosting environment: Development
+ 2022-05-24 00:15:40,463  INFO Microsoft.Hosting.Lifetime.LogMessage [0] - MESSAGE: Content root path: C:\Git\RewardManagementAPI\RewardsManagement\RewardsManagement.Api
+ 2022-05-24 00:26:37,110  INFO Microsoft.Hosting.Lifetime.LogMessage [0] - MESSAGE: Now listening on: https://localhost:5001
+ 2022-05-24 00:26:37,180  INFO Microsoft.Hosting.Lifetime.LogMessage [0] - MESSAGE: Now listening on: http://localhost:5000
+ 2022-05-24 00:26:37,184  INFO Microsoft.Hosting.Lifetime.LogMessage [0] - MESSAGE: Application started. Press Ctrl+C to shut down.
+ 2022-05-24 00:26:37,186  INFO Microsoft.Hosting.Lifetime.LogMessage [0] - MESSAGE: Hosting environment: Development
+ 2022-05-24 00:26:37,191  INFO Microsoft.Hosting.Lifetime.LogMessage [0] - MESSAGE: Content root path: C:\Git\RewardManagementAPI\RewardsManagement\RewardsManagement.Api
+ 2022-05-24 00:31:54,733  INFO Microsoft.Hosting.Lifetime.LogMessage [0] - MESSAGE: Now listening on: https://localhost:5001
+ 2022-05-24 00:31:54,811  INFO Microsoft.Hosting.Lifetime.LogMessage [0] - MESSAGE: Now listening on: http://localhost:5000
+ 2022-05-24 00:31:54,815  INFO Microsoft.Hosting.Lifetime.LogMessage [0] - MESSAGE: Application started. Press Ctrl+C to shut down.
+ 2022-05-24 00:31:54,817  INFO Microsoft.Hosting.Lifetime.LogMessage [0] - MESSAGE: Hosting environment: Development
+ 2022-05-24 00:31:54,820  INFO Microsoft.Hosting.Lifetime.LogMessage [0] - MESSAGE: Content root path: C:\Git\RewardManagementAPI\RewardsManagement\RewardsManagement.Api
+ 2022-05-24 19:23:07,657  INFO Microsoft.Hosting.Lifetime.LogMessage [0] - MESSAGE: Now listening on: https://localhost:5001
+ 2022-05-24 19:23:07,697  INFO Microsoft.Hosting.Lifetime.LogMessage [0] - MESSAGE: Now listening on: http://localhost:5000
+ 2022-05-24 19:23:07,698  INFO Microsoft.Hosting.Lifetime.LogMessage [0] - MESSAGE: Application started. Press Ctrl+C to shut down.
+ 2022-05-24 19:23:07,700  INFO Microsoft.Hosting.Lifetime.LogMessage [0] - MESSAGE: Hosting environment: Development
+ 2022-05-24 19:23:07,701  INFO Microsoft.Hosting.Lifetime.LogMessage [0] - MESSAGE: Content root path: C:\Git\RewardManagementAPI\RewardsManagement\RewardsManagement.Api
+ 2022-05-24 20:15:08,101  INFO Microsoft.Hosting.Lifetime.LogMessage [0] - MESSAGE: Now listening on: https://localhost:5001
+ 2022-05-24 20:15:08,150  INFO Microsoft.Hosting.Lifetime.LogMessage [0] - MESSAGE: Now listening on: http://localhost:5000
+ 2022-05-24 20:15:08,152  INFO Microsoft.Hosting.Lifetime.LogMessage [0] - MESSAGE: Application started. Press Ctrl+C to shut down.
+ 2022-05-24 20:15:08,154  INFO Microsoft.Hosting.Lifetime.LogMessage [0] - MESSAGE: Hosting environment: Development
+ 2022-05-24 20:15:08,155  INFO Microsoft.Hosting.Lifetime.LogMessage [0] - MESSAGE: Content root path: C:\Git\RewardManagementAPI\RewardsManagement\RewardsManagement.Api
+ 2022-05-24 20:35:15,783  INFO Microsoft.Hosting.Lifetime.LogMessage [0] - MESSAGE: Now listening on: https://localhost:5001
+ 2022-05-24 20:35:15,821  INFO Microsoft.Hosting.Lifetime.LogMessage [0] - MESSAGE: Now listening on: http://localhost:5000
+ 2022-05-24 20:35:15,822  INFO Microsoft.Hosting.Lifetime.LogMessage [0] - MESSAGE: Application started. Press Ctrl+C to shut down.
+ 2022-05-24 20:35:15,823  INFO Microsoft.Hosting.Lifetime.LogMessage [0] - MESSAGE: Hosting environment: Development
+ 2022-05-24 20:35:15,825  INFO Microsoft.Hosting.Lifetime.LogMessage [0] - MESSAGE: Content root path: C:\Git\RewardManagementAPI\RewardsManagement\RewardsManagement.Api
+ 2022-05-24 20:40:02,298  INFO Microsoft.Hosting.Lifetime.LogMessage [0] - MESSAGE: Now listening on: https://localhost:5001
+ 2022-05-24 20:40:02,336  INFO Microsoft.Hosting.Lifetime.LogMessage [0] - MESSAGE: Now listening on: http://localhost:5000
+ 2022-05-24 20:40:02,338  INFO Microsoft.Hosting.Lifetime.LogMessage [0] - MESSAGE: Application started. Press Ctrl+C to shut down.
+ 2022-05-24 20:40:02,339  INFO Microsoft.Hosting.Lifetime.LogMessage [0] - MESSAGE: Hosting environment: Development
+ 2022-05-24 20:40:02,341  INFO Microsoft.Hosting.Lifetime.LogMessage [0] - MESSAGE: Content root path: C:\Git\RewardManagementAPI\RewardsManagement\RewardsManagement.Api
+ 2022-05-24 20:54:37,597  INFO Microsoft.Hosting.Lifetime.LogMessage [0] - MESSAGE: Now listening on: https://localhost:5001
+ 2022-05-24 20:54:37,654  INFO Microsoft.Hosting.Lifetime.LogMessage [0] - MESSAGE: Now listening on: http://localhost:5000
+ 2022-05-24 20:54:37,657  INFO Microsoft.Hosting.Lifetime.LogMessage [0] - MESSAGE: Application started. Press Ctrl+C to shut down.
+ 2022-05-24 20:54:37,659  INFO Microsoft.Hosting.Lifetime.LogMessage [0] - MESSAGE: Hosting environment: Development
+ 2022-05-24 20:54:37,661  INFO Microsoft.Hosting.Lifetime.LogMessage [0] - MESSAGE: Content root path: C:\Git\RewardManagementAPI\RewardsManagement\RewardsManagement.Api
+ 

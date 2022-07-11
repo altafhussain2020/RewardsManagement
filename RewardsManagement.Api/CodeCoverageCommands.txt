@@ -1,0 +1,7 @@
+--Open VS Code
+--Locate Unit Testing Project 
+dotnet add package coverlet.collector
+dotnet test --collect:"XPlat Code Coverage"
+dotnet tool install --global dotnet-reportgenerator-globaltool --version 5.1.9
+
+reportgenerator -reports:".\TestResults\0f5daed6-b366-425c-8dbf-bdf0e2f54a91\coverage.cobertura.xml" -targetdir:"coveragereport" -reporttypes:Html
